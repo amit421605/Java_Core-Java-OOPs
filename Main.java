@@ -1,51 +1,42 @@
-import java.util.Scanner;
-
- class HoteLMenu{
-
-Scanner sc=new Scanner(System.in);
-
-public String DishName;
-public String Ingredients;
-public int price ;
-
- void HoteL(){
-
-    System.out.println("Enter Dish Name");
-    String food =sc.nextLine();
-    this.DishName=food;
-
-    System.out.println("Enter Ingredients");
-     String Indg=sc.nextLine();
-    this.Ingredients=Indg;
-
-    System.out.println("Enter Price");
-   int prc =sc.nextInt();
-    this.price= prc ;
-
+class BankAccount{
+private double balance ; 
+ double Balance (){
+return balance;
 }
-void Display(){
+void Deposit(int amount){
+    if(amount>0) {
+        balance+=amount;
+    }
+}
+void WithDraw(int amt){
+    if(amt > 0 && balance >= amt) balance-=amt;
+   }
+ }
 
- System.out.println(" Dish"+this.DishName);
- System.out.println("Ingredients : "+this.Ingredients);
- System.out.println("price:"+this.price);
+class StudentMarks{
+   private int marks;
+
+   int getMarks(){
+    return marks;
+   }
+
+   void setMarks(int marks){
+        if(marks>0 && marks<=100) this.marks=marks;
+   }
 
 }
 
-}
 public class Main {
-    public static void main(String[] args){
+    public static  void main(String[] args){
+    //     BankAccount ba=new BankAccount();
+    //     ba.Deposit(1000);
+    //    System.out.println(ba.Balance()) ;
+    //     ba.WithDraw(300);
+    //    System.out.println(ba.Balance()) ;
 
-       HoteLMenu obj1=new HoteLMenu();
-       obj1.HoteL();
-       
-
-       HoteLMenu obj2=new HoteLMenu();
-       obj2.HoteL();
-
-       obj1.Display();
-       obj2.Display();
-
-
-
+    StudentMarks std= new StudentMarks();
+    std.setMarks(50);
+    System.out.println(std.getMarks());
+    
     }
 }
